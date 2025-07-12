@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import QuestionsModel from "models/Question";
+import QuestionsModel from "../../models/Question";
 
 export const fetchQuestions = async (req: Request, res: Response) => {
     try {
