@@ -2,11 +2,14 @@ import envConfig from "./config/envConfig";
 import express from "express";
 import dotenv from "dotenv";
 import connectDb from "./config/database";
+import routes from "./routes";
 
 dotenv.config();
 const app = express();
 
 app.use(express.json());
+
+app.use("/api", routes);
 
 connectDb(envConfig.MONGO_URI || "")
     .then(() => {
