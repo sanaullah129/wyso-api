@@ -17,6 +17,7 @@ const submitResponse = async (req: Request, res: Response) => {
 
         res.status(200).json({ message: "Response saved", response });
     } catch (err: any) {
+        console.error("-- Onboard Controller - Submit Response --", err);
         res.status(500).json({ message: "Error saving response", error: err.message });
     }
 };
