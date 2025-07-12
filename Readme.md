@@ -1,4 +1,4 @@
-# Wyso API
+# Wysa API assignment
 
 A Node.js/Express REST API for user onboarding, question/response management, and analytics. Built with TypeScript, MongoDB (Mongoose), and JWT authentication.
 
@@ -51,7 +51,7 @@ A `.har` (HTTP Archive) file is included in this project to help you test and de
 
 ### Auth & User
 
-#### POST `/user/signup`
+#### POST `/api/user/signup`
 Register a new user.
 - **Body:**
   - `firstName` (string, required)
@@ -62,7 +62,7 @@ Register a new user.
 - **Response:**
   - `201 Created` with user info (no password)
 
-#### POST `/user/login`
+#### POST `/api/user/login`
 Authenticate user and get JWT token.
 - **Body:**
   - `emailId` (string, required)
@@ -79,7 +79,7 @@ Fetch all onboarding questions.
 
 ### Responses
 
-#### POST `/user/response`
+#### POST `/api/onboard`
 Submit or update a user's answer to a question. Requires JWT auth.
 - **Headers:**
   - `Authorization: Bearer <token>`
@@ -92,7 +92,7 @@ Submit or update a user's answer to a question. Requires JWT auth.
 
 ### Analytics
 
-#### GET `/user/stats/dropoffs`
+#### GET `/api/stats/dropoffs`
 Get drop-off stats for each question, including question text, step number, and users who dropped off.
 - **Response:**
   - `200 OK` with array of:
