@@ -1,10 +1,14 @@
-import { Router } from "express";
+import { Request, Response, Router } from "express";
 import userRouter from "./controllers/user/router";
 import onboardRouter from "./controllers/onboard/router";
 
-const routes = Router();
+const router = Router();
 
-routes.use("/users", userRouter);
-routes.use("/onboard", onboardRouter)
+router.get("/", (req: Request, res: Response) => {
+  res.send("Server is running");
+});
 
-export default routes;
+router.use("/users", userRouter);
+router.use("/onboard", onboardRouter)
+
+export default router;
