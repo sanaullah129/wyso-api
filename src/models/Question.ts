@@ -20,5 +20,5 @@ const QuestionsSchema = new Schema<IQuestions>({
     }
 }, { timestamps: true });
 
-const QuestionsSchemaModel = mongoose.model<IQuestions>('Questions', QuestionsSchema);
-export default QuestionsSchemaModel;
+const QuestionsModel = mongoose.model<IQuestions>('Questions', QuestionsSchema);
+export default QuestionsModel;
